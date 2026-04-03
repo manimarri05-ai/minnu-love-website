@@ -1,0 +1,24 @@
+version: 3
+
+# Add your ngrok auth token here (get from https://dashboard.ngrok.com/auth)
+authtoken: YOUR_NGROK_AUTH_TOKEN
+
+# Tunnels configuration
+tunnels:
+  chat_app:
+    proto: http
+    addr: 5000
+    # Basic authentication (optional - add your own credentials)
+    auth: "login:password123"
+    # Restrict access to specific IP (optional)
+    # allowed_ips:
+    #   - "YOUR_GIRLFRIEND_IP"
+    
+    # Custom domain (requires ngrok Pro)
+    # domain: your-custom-domain.ngrok.io
+
+# Edge configuration for advanced security (Pro plan)
+edges:
+  chat_edge:
+    proto_addr: localhost:5000
+    enabled: true
